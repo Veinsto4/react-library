@@ -1,0 +1,369 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+.Container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Header {
+  background-color: #17a2b8;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.Navigation {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 150px;
+  background-color: #17a2b8;
+  margin-bottom: 50px;
+  padding-top: 15px;
+}
+
+.NavLink {
+  color: white;
+  text-decoration: none;
+  padding: 10px 35px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.NavLink, .NavLink select {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: transparent; 
+  border: none; 
+  font-family: inherit; 
+  cursor: pointer; 
+  transition: background-color 0.1s ease-in-out;
+}
+.NavLink:hover, .NavLink:focus {
+  background-color: #145a6a;
+}
+
+.BooksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  grid-template-rows: auto; 
+  gap: 20px; 
+  justify-content: center; 
+  padding: 20px;
+}
+
+.BookItem {
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.BookImage {
+  width: 200px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  
+}
+.BookItem img {
+  max-width: 200px; 
+  max-height: 350px;
+  width: auto; 
+  height: auto; 
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.CloseButton {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.StatusButtonGroup button {
+  background-color: transparent; 
+  color: #17a2b8; 
+  padding: 8px 16px;
+  margin-bottom: 8px; 
+  border: 2px solid #17a2b8;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+  text-align: center; 
+  width: auto;
+  display: block; 
+}
+
+.StatusButtonGroup button:hover {
+  background-color: #17a2b8; 
+  color: white; 
+  border-color: #17a2b8; 
+}
+
+.StatusButtonGroup button:last-child {
+  margin-bottom: 0;
+}
+
+.Button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px; 
+}
+
+.Button:last-child {
+  margin-bottom: 0; 
+}
+
+.Form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.FormGroup {
+  margin-bottom: 1rem;
+}
+
+.Label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.Input, .Select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.Input[type="file"] {
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px dashed #ccc;
+}
+
+.Button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.Button:hover {
+  background-color: #145a6a;
+}
+.Rating {
+  font-size: 2rem; 
+  color: #f5c518; 
+}
+
+.HalfStar {
+  color: #f5c518; 
+}
+
+.dark-theme {
+  background-color: #121212; 
+  color: #ffffff; 
+}
+
+.dark-theme .Header {
+  background-color: #1a1a1a; 
+}
+
+.dark-theme .BookItem {
+  background-color: #1e1e1e; 
+  color: #ffffff; 
+}
+
+.dark-theme .Button {
+  background-color: #262626; 
+  color: #ffffff; 
+}
+
+.dark-theme .Button:hover {
+  background-color: #333333;
+}
+
+.dark-theme .Navigation{
+  background-color: #1e1e1e;
+}
+
+.dark-theme .NavLink:hover, .dark-theme .NavLink:focus {
+  background-color: #333333; 
+}
+
+.Header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #17a2b8;
+  color: white;
+  padding: 20px;
+  padding-bottom: 20px; 
+
+}
+
+.HeaderTitle {
+  flex-grow: 1; 
+}
+
+.ThemeToggle {
+  margin-left: 20px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+}
+
+
+.ModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.Modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  position: relative;
+}
+
+.ModalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ModalTitle {
+  margin: 0;
+}
+
+.CloseButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.ModalImage {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.ModalBody {
+  padding: 10px 0;
+}
+
+.ModalAuthor {
+  font-weight: bold;
+}
+
+.ModalDescription {
+  margin-top: 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .Form {
+    width: calc(100% - 40px);
+    margin: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .NavLink {
+    margin-bottom: 10px;
+  }
+
+  .BookItem {
+    grid-template-columns: 1fr; 
+    text-align: center;
+  }
+
+  .BookImage {
+    margin: 0 auto; 
+  }
+
+  .StatusButtons {
+    order: 3; 
+    grid-row: auto; 
+  }
+}
+@media (min-width: 600px) {
+  .BooksContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .BooksContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
