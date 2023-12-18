@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Modal from './Modal';
-import '../styles.css'; 
+import Modal from '../common/Modal'; 
+import { useWishlist } from '../wishlist/WishlistContext';
+import '../../styles.css'; 
+
 
 const BookSearchPage = () => {
   const [query, setQuery] = useState('');
@@ -9,6 +11,7 @@ const BookSearchPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [selectedBook, setSelectedBook] = useState(null);
+  const { addToWishlist } = useWishlist();
 
   const searchBooks = async () => {
     setIsLoading(true);
@@ -69,6 +72,7 @@ const BookSearchPage = () => {
               <img src={book.volumeInfo.imageLinks?.thumbnail} alt={book.volumeInfo.title} />
               <h2 className="BookTitle">{book.volumeInfo.title}</h2>
               <p className="BookAuthor">Author: {book.volumeInfo.authors?.join(', ')}</p>
+              <button onClick={() => addToWishlist(book)}>Add to Wishlist</button>
             </div>
           ))
         ) : (

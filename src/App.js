@@ -2,12 +2,14 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import BookList from './components/BookList';
-import AddBook from './components/AddBook';
-import Register from './components/Register';
-import Login from './components/Login';
-import SearchBooks from './components/SearchBooks';
-import BookSearchPage from './components/BookSearchPage';
+import BookList from './components/books/BookList';
+import AddBook from './components/books/AddBook';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import SearchBooks from './components/books/SearchBooks';
+import BookSearchPage from './components/books/BookSearchPage';
+import WishlistPage from './components/wishlist/WishlistPage'; 
+import { WishlistProvider } from './components/wishlist/WishlistContext';
 import './styles.css'; 
 
 const App = () => {
@@ -71,6 +73,7 @@ const App = () => {
   }, [books, searchTerm, filterStatus]);
   
   return (
+    <WishlistProvider>
     <Router>
       <div className={`Container ${darkTheme ? 'dark-theme' : ''}`}>
         <div className="Header">
@@ -95,6 +98,7 @@ const App = () => {
                 <option value="In the plans">In the plans</option>
               </select>             
                <Link to="/search" className="NavLink">Book Search</Link>
+               <Link to="/wishlist" className="NavLink">Wishlist</Link>
               <Link to="/logout" onClick={handleLogout} className="NavLink LogoutButton">Logout</Link>
             </>
           ) : (
@@ -110,6 +114,7 @@ const App = () => {
               <Route path="/" element={<BookList books={filteredBooks} updateBookStatus={updateBookStatus} deleteBook={deleteBook} />} />
               <Route path="/add" element={<AddBook addBook={addBook} />}/>
               <Route path="/search" element={<BookSearchPage />} />
+              <Route path="/wishlist" element={<WishlistPage />} />
             </>
           ) : (
             <>
@@ -121,7 +126,8 @@ const App = () => {
           )}
         </Routes>
       </div>
-    </Router>
+    </Router>    </WishlistProvider>
+
   );
 };
 
