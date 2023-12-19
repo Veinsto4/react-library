@@ -1,10 +1,13 @@
+// Footer.js
 import React from 'react';
-import '../../styles.css'; 
+import './Footer.css'; // Убедитесь, что вы создали соответствующий CSS файл для стилей
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} My Bookshelf</p>
+      <div className="footer-content">
+        <p>&copy; {new Date().getFullYear()} My Bookshelf. All rights reserved.</p>
+      </div>
     </footer>
   );
 };

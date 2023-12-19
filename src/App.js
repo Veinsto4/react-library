@@ -10,6 +10,8 @@ import SearchBooks from './components/books/SearchBooks';
 import BookSearchPage from './components/books/BookSearchPage';
 import WishlistPage from './components/wishlist/WishlistPage'; 
 import { WishlistProvider } from './components/wishlist/WishlistContext';
+import Footer from './components/common/Footer'; 
+import { exportDataToPDF } from './utils/DataManagement';
 import './styles.css'; 
 
 const App = () => {
@@ -53,6 +55,11 @@ const App = () => {
   const deleteBook = (updatedBooks) => {
     setBooks(updatedBooks);
   };
+
+  
+  const handleExportToPDF = () => {
+    exportDataToPDF(books);
+};
 
   const [searchTerm, setSearchTerm] = useState(''); 
   const [filterStatus, setFilterStatus] = useState('');
@@ -100,6 +107,7 @@ const App = () => {
                <Link to="/search" className="NavLink">Book Search</Link>
                <Link to="/wishlist" className="NavLink">Wishlist</Link>
               <Link to="/logout" onClick={handleLogout} className="NavLink LogoutButton">Logout</Link>
+              
             </>
           ) : (
             <>
@@ -108,9 +116,11 @@ const App = () => {
             </>
           )}
         </div>
+        
         <Routes>
           {isLoggedIn ? (
             <>
+            
               <Route path="/" element={<BookList books={filteredBooks} updateBookStatus={updateBookStatus} deleteBook={deleteBook} />} />
               <Route path="/add" element={<AddBook addBook={addBook} />}/>
               <Route path="/search" element={<BookSearchPage />} />
@@ -125,8 +135,14 @@ const App = () => {
             </>
           )}
         </Routes>
+        <div className="DataManagement">
+        <button onClick={handleExportToPDF}>Export data to PDF</button>
+        </div>
+        <Footer /> 
       </div>
-    </Router>    </WishlistProvider>
+      
+    </Router>    
+    </WishlistProvider>
 
   );
 };
