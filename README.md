@@ -1,3 +1,32 @@
+
+The Bookshelf management System is a web application designed to efficiently organize and manage a user's book collection. It provides the following set of key functions:
+
+Adding books:
+
+The user can easily add new books to his collection by providing information about them, such as the title of the book, author, genre, reading status and other information.
+The functionality of adding books can be implemented through the book data entry form.
+Book Search:
+
+The system provides the ability to search for books by various criteria, such as title, author, genre, etc.
+The user can use the search to quickly find books in their collection.
+Managing a wish list:
+
+The user can create a wish list to which he can add books that he wants to read in the future.
+It is possible to track the status of books in the desired list, such as "read", "in the process of reading", "in plans", etc.
+Exporting book data to PDF format:
+
+The user has the ability to export data about books from his collection to PDF format.
+The exported PDF can contain information about all the books in the collection, including titles, authors, genres, reading statuses, and other information.
+This functionality allows users to save their book collection in a convenient and easily accessible format.
+Thus, the bookshelf management system provides a convenient and efficient means for storing, organizing and managing books, which allows users to easily track their readings, find new books and save their preferences in a convenient format.
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
